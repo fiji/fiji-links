@@ -35,7 +35,7 @@ import org.junit.jupiter.api.Test;
 import org.scijava.SciJava;
 import org.scijava.console.ConsoleService;
 import org.scijava.console.OutputEvent;
-import org.scijava.links.LinkService;
+import org.scijava.desktop.links.LinkService;
 
 import java.net.URI;
 import java.net.URISyntaxException;

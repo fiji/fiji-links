@@ -81,7 +81,8 @@
 		<license.licenseName>bsd_2</license.licenseName>
 		<license.copyrightOwners>Fiji developers.</license.copyrightOwners>
 
-		<scijava-links.version>1.0.0</scijava-links.version>
+		<scijava-desktop.version>1.0.0-SNAPSHOT</scijava-desktop.version>
+		<enforcer.skip>true</enforcer.skip>
 	</properties>
 
 	<dependencies>
@@ -91,8 +92,8 @@
 		</dependency>
 		<dependency>
 			<groupId>org.scijava</groupId>
-			<artifactId>scijava-links</artifactId>
-			<version>${scijava-links.version}</version>
+			<artifactId>scijava-desktop</artifactId>
+			<version>${scijava-desktop.version}</version>
 		</dependency>
 
 		<!-- Test scope dependencies -->
