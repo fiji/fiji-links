@@ -29,24 +29,25 @@
 
 package sc.fiji.links;
 
-import org.scijava.io.IOService;
-import org.scijava.io.location.FileLocation;
-import org.scijava.io.location.Location;
-import org.scijava.io.location.LocationService;
-import org.scijava.io.location.URLLocation;
-import org.scijava.links.AbstractLinkHandler;
-import org.scijava.links.LinkHandler;
-import org.scijava.links.Links;
-import org.scijava.log.LogService;
-import org.scijava.plugin.Parameter;
-import org.scijava.plugin.Plugin;
-import org.scijava.ui.UIService;
-
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.Arrays;
+import java.util.List;
+
+import org.scijava.desktop.links.AbstractLinkHandler;
+import org.scijava.desktop.links.LinkHandler;
+import org.scijava.desktop.links.Links;
+import org.scijava.io.IOService;
+import org.scijava.io.location.FileLocation;
+import org.scijava.io.location.Location;
+import org.scijava.io.location.LocationService;
+import org.scijava.io.location.URLLocation;
+import org.scijava.log.LogService;
+import org.scijava.plugin.Parameter;
+import org.scijava.plugin.Plugin;
+import org.scijava.ui.UIService;
 
 /** Handles {@code fiji://open} links. */
 @Plugin(type = LinkHandler.class)
@@ -129,6 +130,11 @@ public class OpenLinkHandler extends AbstractLinkHandler {
 		catch (IOException | URISyntaxException e) {
 			if (log != null) log.error(e);
 		}
+	}
+
+	@Override
+	public List<String> getSchemes() {
+		return Arrays.asList("fiji");
 	}
 
 	private void handleOpen(Location location) throws IOException {

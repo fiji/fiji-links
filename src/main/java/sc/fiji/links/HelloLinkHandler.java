@@ -29,9 +29,9 @@
 
 package sc.fiji.links;
 
-import org.scijava.links.AbstractLinkHandler;
-import org.scijava.links.LinkHandler;
-import org.scijava.links.Links;
+import org.scijava.desktop.links.AbstractLinkHandler;
+import org.scijava.desktop.links.LinkHandler;
+import org.scijava.desktop.links.Links;
 import org.scijava.log.LogLevel;
 import org.scijava.log.LogService;
 import org.scijava.plugin.Parameter;
@@ -39,6 +39,8 @@ import org.scijava.plugin.Plugin;
 import org.scijava.ui.UIService;
 
 import java.net.URI;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 /** Handles {@code fiji://hello} links. */
@@ -81,6 +83,11 @@ public class HelloLinkHandler extends AbstractLinkHandler {
 			throw new UnsupportedOperationException(
 				"Unknown hello operation: " + operation);
 		}
+	}
+
+	@Override
+	public List<String> getSchemes() {
+		return Arrays.asList("fiji");
 	}
 
 	public static void main(String[] args) throws Exception {
