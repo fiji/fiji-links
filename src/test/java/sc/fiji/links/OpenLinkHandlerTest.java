@@ -54,6 +54,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assumptions.assumeFalse;
 
 /**
  * Tests {@link OpenLinkHandler}.
@@ -102,6 +103,8 @@ public class OpenLinkHandlerTest {
 
 	@Test
 	public void testOpenFile() throws URISyntaxException {
+		var uiService = scifio.get(UIService.class);
+		assumeFalse(uiService.isHeadless());
 		var linkService = scifio.get(LinkService.class);
 		var tableURL = getClass().getResource("molitor.csv");
 		assertNotNull(tableURL);
@@ -109,7 +112,7 @@ public class OpenLinkHandlerTest {
 		assertEquals("molitor.csv", tableFile.getName());
 		var uri = new URI("fiji://open/file?p=" +
 			URLEncoder.encode(tableFile.getAbsolutePath(), StandardCharsets.UTF_8));
-		var ui = (MockUI) scifio.get(UIService.class).getDefaultUI();
+		var ui = (MockUI) uiService.getDefaultUI();
 		ui.shown.clear();
 		linkService.handle(uri);
 		assertEquals(1, ui.shown.size());
