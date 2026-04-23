@@ -82,6 +82,9 @@
 		<license.copyrightOwners>Fiji developers.</license.copyrightOwners>
 
 		<scijava-desktop.version>1.0.0</scijava-desktop.version>
+
+		<!-- NB: Deploy releases to the SciJava Maven repository. -->
+		<releaseProfiles>sign,deploy-to-scijava</releaseProfiles>
 	</properties>
 
 	<dependencies>
