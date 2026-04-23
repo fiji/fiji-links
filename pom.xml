@@ -11,7 +11,7 @@
 
 	<groupId>sc.fiji</groupId>
 	<artifactId>fiji-links</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0.0</version>
 
 	<name>Fiji Links</name>
 	<description>Standard fiji:// URL handlers.</description>
@@ -61,7 +61,7 @@
 	<scm>
 		<connection>scm:git:https://github.com/fiji/fiji-links</connection>
 		<developerConnection>scm:git:git@github.com:fiji/fiji-links</developerConnection>
-		<tag>HEAD</tag>
+		<tag>fiji-links-1.0.0</tag>
 		<url>https://github.com/fiji/fiji-links</url>
 	</scm>
 
